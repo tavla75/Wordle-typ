@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle typ</title>
+</head>
+<body>
+  <h1>Wordle</h1>
+  <label>G = correct place, Y = correct letter, X = incorrect letter</label>
+  <div>
+    <label for="guessInput">Guess (5 letters):</label>
+    <input id="guessInput" maxlength="5" autofocus>
+    <button id="guessButton">Guess</button>
+  </div>
+  <div id="status"></div>
+  <div id="history"></div>
+  <button id="newGame">New game</button>
+  <script src="main.js"></script>
+</body>
+</html>
