@@ -37,6 +37,8 @@ function playWordleDOM() {
   const guessButton = document.getElementById("guessButton");
   const newGame = document.getElementById("newGame");
 
+  if (!status || !history || !guessInput || !guessButton || !newGame) return;
+
   let secret = "";
   let round = 0;
   const maxGuesses = 6;
@@ -96,8 +98,12 @@ function playWordleDOM() {
   startGame();
 }
 
-if (typeof window !== "undefined" && document) {
-  playWordleDOM();
+if (typeof document !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", playWordleDOM, { once: true });
+  } else {
+    playWordleDOM();
+  }
 }
 
-module.exports = { evaluateGuess, randomWord, words };
+export { evaluateGuess, randomWord, words };
